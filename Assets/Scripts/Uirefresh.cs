@@ -9,6 +9,6 @@ public class Uirefresh : MonoBehaviour
 
     void Update()
     {
-        textUI.text = "Resources " + GlobaStats.Instance.NbResources.ToString("F0");
+        textUI.text = "Credits " + GlobaStats.Instance.NbResources.ToString("F0");
     }
 }

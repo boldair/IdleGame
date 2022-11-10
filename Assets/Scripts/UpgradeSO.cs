@@ -13,6 +13,7 @@ public class UpgradeSO : ScriptableObject
 
     public float initialRevenue;
     public float initialProductivity;
-    public float timer; 
+    public float timer;
 
+    public Sprite sprite;
 }

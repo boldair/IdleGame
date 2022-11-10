@@ -13,18 +13,20 @@ public class UpgradeSelectionUI : MonoBehaviour
 
         UpgradeListSO upgradeListSO = Resources.Load<UpgradeListSO>(typeof(UpgradeListSO).Name);
 
+        int index = 0;
         foreach(var upgradeType in upgradeListSO.upgradeSOList)
         {
             Transform btnTransform = Instantiate(btnTemplate, transform);
             btnTransform.gameObject.SetActive(true);
 
             btnTransform.Find("image").GetComponent<Image>().sprite = upgradeType.sprite;
+
+            float offsetAmount = -100f;
+
+
+            index++;
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

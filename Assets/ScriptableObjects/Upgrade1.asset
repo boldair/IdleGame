@@ -18,3 +18,4 @@ MonoBehaviour:
   initialRevenue: 1
   initialProductivity: 1.67
   timer: 0.6
+  sprite: {fileID: 21300000, guid: cee9dbe90b270c944ae1dabf41c93b10, type: 3}

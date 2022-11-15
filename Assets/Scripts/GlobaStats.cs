@@ -7,11 +7,11 @@ public class GlobaStats : MonoBehaviour
 {
 
     public static GlobaStats Instance { get; private set; }
-    public float NbResources { get => nbResources; set => nbResources = value; }
+    public double NbResources { get => nbResources; set => nbResources = value; }
     public Dictionary<UpgradeSO, float> UpgradeNumberDictionary { get => upgradeNumberDictionary; set => upgradeNumberDictionary = value; }
     public int ClickUpgradeNumber { get => clickUpgradeNumber; set => clickUpgradeNumber = value; }
 
-    private float nbResources;
+    private double nbResources;
 
     private Dictionary<UpgradeSO, float> upgradeNumberDictionary;
     private int clickUpgradeNumber;
@@ -21,7 +21,7 @@ public class GlobaStats : MonoBehaviour
         Instance = this;
         UpgradeNumberDictionary = new Dictionary<UpgradeSO, float>();
 
-        UpgradeListSO upgradeTypeList = Resources.Load<UpgradeListSO>("ListOfUpgrades");
+        UpgradeListSO upgradeTypeList = Resources.Load<UpgradeListSO>(typeof(UpgradeListSO).Name);
 
         clickUpgradeNumber = 1;
 
@@ -32,8 +32,16 @@ public class GlobaStats : MonoBehaviour
     }
 
 
-    public void AddResources(float resources)
+    public void AddResources(double resources)
     {
         NbResources += resources;
+    }
+
+    private void Update()
+    {
+        foreach(var upgrade in UpgradeNumberDictionary.Keys)
+        {
+
+        }
     }
 }

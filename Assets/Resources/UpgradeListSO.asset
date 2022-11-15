@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4ab3ab3baa3bf94ca4fcf80e515655d, type: 3}
-  m_Name: ListOfUpgrades
+  m_Name: UpgradeListSO
   m_EditorClassIdentifier: 
   upgradeSOList:
   - {fileID: 11400000, guid: 43ec36ebb36413d4eb55acdc93c5711c, type: 2}
   - {fileID: 11400000, guid: a331c2ab55990d1448cb0a935f1454d5, type: 2}
+  - {fileID: 11400000, guid: 63be0ab88ac4c8c4893c748091166322, type: 2}

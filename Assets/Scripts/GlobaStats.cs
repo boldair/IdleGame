@@ -36,6 +36,11 @@ public class GlobaStats : MonoBehaviour
     {
         NbResources += resources;
     }
+    public void BuyUpgrade(UpgradeSO upgrade, double cost)
+    {
+        UpgradeNumberDictionary[upgrade] += 1;
+        NbResources -= cost;
+    }
 
     private void Update()
     {

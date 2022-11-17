@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ResourceGenerator : MonoBehaviour
@@ -9,6 +11,12 @@ public class ResourceGenerator : MonoBehaviour
     private float timer;
     private float timerMax;
 
+    public event EventHandler<OnCostChangedEventArgs> OnCostChanged;
+
+    public class OnCostChangedEventArgs : EventArgs
+    {
+        public double costArgs;
+    }
 
     private float costMultiplier;
     private float costBase;
@@ -34,11 +42,14 @@ public class ResourceGenerator : MonoBehaviour
     private void ChangeCost()
     {
         cost = CostBase * System.Math.Pow(CostMultiplier, GlobaStats.Instance.UpgradeNumberDictionary[UpgradeSO]);
+        OnCostChanged?.Invoke(this, new OnCostChangedEventArgs { costArgs = cost });  ;
     }
     public void UpdateCostAndProduction()
     {
+
         if (Utils.Instance.CanBuy(cost))
         {
+            GlobaStats.Instance.BuyUpgrade(UpgradeSO, cost);
             totalRevenue = (InitialProductivity * GlobaStats.Instance.UpgradeNumberDictionary[UpgradeSO]) * InitialRevenue;
             ChangeCost();
         }

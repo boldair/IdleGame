@@ -28,6 +28,7 @@ public class UpgradeSelectionUI : MonoBehaviour
             btnTransform.GetComponent<ResourceGenerator>().InitialRevenue = upgradeType.initialRevenue;
             btnTransform.GetComponent<ResourceGenerator>().InitialProductivity = upgradeType.initialProductivity;
             btnTransform.GetComponent<ResourceGenerator>().CostMultiplier = upgradeType.costMultiplier;
+            btnTransform.GetComponent<ResourceGenerator>().UpgradeSO = upgradeType;
 
             btnTransform.Find("image").GetComponent<Image>().sprite = upgradeType.sprite;
 
@@ -39,6 +40,13 @@ public class UpgradeSelectionUI : MonoBehaviour
 
 
             //button action listener 
+            btnTransform.GetComponent<Button>().onClick.AddListener(() =>
+            {
+                btnTransform.GetComponent<ResourceGenerator>().UpdateCostAndProduction();
+            });
+
+
+
             index++;
         }
     }

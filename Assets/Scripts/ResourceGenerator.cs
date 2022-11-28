@@ -62,7 +62,6 @@ public class ResourceGenerator : MonoBehaviour
         {
             GlobaStats.Instance.AddResources(totalRevenue);
             timer += TimerMax;
-
         }
     }
 }
